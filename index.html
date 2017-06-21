@@ -24,18 +24,36 @@
         <footer id="controls"></footer>
 
     <!-- Templates -->
-<!--
+
     <script type="text/template" id='app'>
-        <header id="header">
-            <h1>Backbone Todo App</h1>
-        </header>
-        <div class="content">
+        <h1 class="text-center">Backbone Todo App</h1>
+    </script>
+
+    <script type="text/template" id='todo-input'>
+        <div class="input-group"> 
+            <span class="input-group-btn">
+                <button class="btn btn-primary" id="add-todo">Add</button></span>
+            <input class="form-control" id="new-todo" placeholder="add a todo">
         </div>
     </script>
 
-    <script type="text/template" id="todo-list">
-        <input id="new-todo" placeholder="Get some shit done.">
-    </script>-->
+    <script type="text/template" id='filter'>
+        <div> 
+            <select>
+                <option value="all">all</option>
+                <option value="active">active</option>
+                <option value="complete">complete</option>
+            </select>
+            <button class="pull-right btn btn-default">Clear</button>
+        </div>
+    </script>
+
+    <script type="text/template" id="todo-item">
+        <li class="list-group-item">
+            <input type="checkbox" value="on"></input>
+            <label class=""><%= title %></label> <!--title doesn't get passed right now-->
+        </li>
+    </script>
 
     <!-- App Logic -->
 

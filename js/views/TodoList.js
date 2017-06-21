@@ -1,9 +1,8 @@
 App.Views.TodoList = Backbone.View.extend({
     el: '#todo-list', 
     initialize: function() {
-        console.log('todolist initialization:')
-        console.log(this.collection);
-        this.listenTo(this.collection, 'add', console.log('collection changed')); // doesn't detect change
+        // this.collection.on('add', this.renderTodo(), this);
+        this.listenTo(this.collection, 'add', this.renderTodo()); // doesn't detect change
     },
     render: function() {
         console.log('todolist render firing')
@@ -11,11 +10,14 @@ App.Views.TodoList = Backbone.View.extend({
         return this; // what's with the this?
     },
     renderTodo: function (todoItem) {
-        let todoView = new App.Views.Todo({model: App.Models.Todo});
+        console.log('stuff');
+        // console.log(todoItem) // <- where is this coming from
+        let todoView = new App.Views.Todo({model: todoItem});
         // todoView.render(); 
         this.$el.append('<li class="list-group-item">' + // does this for the second model in the collection...
                 '<input type="checkbox" value="on"></input>' +
                 '<label class="">Poop</label>' + // Needs to be dynamic
             '</li>')
+        // this.$el.append(todoView.el);
     }
 })

@@ -1,6 +1,7 @@
 App.Views.Main = Backbone.View.extend({
     el: '#header', 
+    template: _.template($('#app').html()),
     render: function() {
-        this.$el.html('<h1 class="text-center">' + 'Backbone Todo App' + '</h1>');
+        this.$el.html(this.template()); // find template by an identifier and stick into el
     }
 });

@@ -1,15 +1,7 @@
 App.Views.Controls = Backbone.View.extend({
     el: '#controls',
+    template: _.template($('#filter').html()),
     render: function() {
-        this.$el.html(
-            '<div>' + 
-                '<select>' + 
-                    '<option value="all">all</option>' + 
-                    '<option value="active">active</option>' + 
-                    '<option value="complete">complete</option>' + 
-                '</select>' +
-                '<button class="pull-right btn btn-default">Clear</button>' + 
-            '</div>'
-            );
+        this.$el.html(this.template()); // find template by an identifier and stick into el
     }
 })
