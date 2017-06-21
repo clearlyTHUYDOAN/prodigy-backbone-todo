@@ -1,9 +1,10 @@
 const FormView = Backbone.View.extend({
-    tagName: 'form',
-    initialize: () => {
-        console.log('View initialize has fired.');
+    el: '#form',
+    initialize: function() {
+        // Event listeners
+
     },
-    render: () => {
-        console.log('View render has fired.');
+    render: function() {
+        this.$el.html('<input id="new-todo" placeholder="Get some shit done."><button id="add-todo" type="button">Add</button>');
     }
 })

@@ -14,17 +14,17 @@
     <script src="node_modules/backbone/backbone.js"></script>
 
         <section id="todoapp">
-            <header id="header">
-            </header>
-            <input id="new-todo" placeholder="Get some shit done.">
-            <button id="add-todo" type="button">Add</button>
-        <section id="main">
-            <input id="toggle-all" type="checkbox">
-            <label for="toggle-all">Mark all as complete</label>
-            <ul id="todo-list"></ul>
+            <header id="header"></header>
+            <form id="form"></form>
+            <section id="main">
+                <input id="toggle-all" type="checkbox">
+                <label for="toggle-all">Mark all as complete</label>
+                <ul id="todo-list"></ul>
+            </section>
         </section>
-            <footer id="footer"></footer>
-        </section>
+
+        <footer id="footer"></footer>
+
         <div id="info">
             <p>Double-click to edit a todo</p>
         </div>
@@ -48,6 +48,8 @@
     <script src="js/index.js"></script>
     <script src="js/models/Todo.js"></script>
     <script src="js/views/App.js"></script>
+    <script src="js/views/Form.js"></script>
+    <script src="js/views/TodoList.js"></script>
     <script src="js/views/Todo.js"></script>
     <script src="js/collections/TodoList.js"></script>
 
