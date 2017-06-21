@@ -1,9 +1,5 @@
 const TodoListView = Backbone.View.extend({
     el: '#todo-list', 
-    initialize: function () { 
-        // Event listeners
-        // this.listenTo(Todo, 'add', this.renderTodo);
-    },
     render: function() {
         // console.log(this.collection.models[1].attributes);
         this.collection.forEach(this.renderTodo, this); // what's with the this?
