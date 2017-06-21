@@ -16,7 +16,6 @@ $(document).ready(() => {
         {title: "Learn Backbone", completed: false}, 
         {title: "Eat Lunch", completed: true}
     ])
-    console.log(todoList);
 
     // Render initial state of todos - currently renders but not dynamic
     const todoListView = new App.Views.TodoList({collection: todoList});

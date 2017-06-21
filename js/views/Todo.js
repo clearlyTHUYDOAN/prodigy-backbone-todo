@@ -1,21 +1,18 @@
-App.Views.Todo = Backbone.View.extend({ // currently doing shit all
+App.Views.Todo = Backbone.View.extend({
     el: '#todo-list',
     template: _.template($('#todo-item').html()),
+    events: {
+        'change input': 'toggleComplete'
+    },
     initialize: function() {
-        // Event listeners
-        this.listenTo(this.model, 'change', this.render());
+        this.listenTo(this.model, 'change', this.render); // don't pass the call
+    },
+    toggleComplete: function() {
+        console.log('toggleComplete firing from inside view')
+        this.model.toggleComplete(); // fires from inside model when user interacts with view
     },
     render: function() {
-        console.log('todo rendering')
-        console.log(this.model);
-        // console.log(this.model.attributes);
-        // this.$el.html(this.template(this.model.attributes));
-        // return this;
-        this.$el.html(
-            '<li class="list-group-item">' + 
-                '<input type="checkbox" value="on"></input>' +
-                '<label class="">Test</label>' + // Needs to be dynamic
-            '</li>'
-        );
+        this.$el.html(this.template(this.model.attributes));
+        return this;
     }
 });
