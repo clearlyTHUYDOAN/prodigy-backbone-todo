@@ -9,12 +9,14 @@ const AppView = Backbone.View.extend({
     }
 })
 
-// $(document).ready(() => {
-//     $('#add-todo').on('click', () => {
-//         const todo = new Todo({
-//             title: $('#new-todo').val(),
-//             completed: false
-//         })
-//         console.log(todo.toJSON());
-//     })
-// })
+// Temporary
+
+$(document).ready(() => {
+    $('#add-todo').on('click', () => {
+        const todo = new Todo({
+            title: $('#new-todo').val(),
+            completed: false
+        })
+        console.log(todo.toJSON());
+    })
+})

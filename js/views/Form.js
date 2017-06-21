@@ -8,8 +8,8 @@ const FormView = Backbone.View.extend({
         this.$el.html(
             '<div class="input-group">' + 
                 '<span class="input-group-btn">' + 
-                    '<button class="btn btn-primary" type="button">Add</button></span>' +
-                '<input class="form-control" placeholder="add a todo">' + 
+                    '<button class="btn btn-primary" type="button" id="add-todo">Add</button></span>' +
+                '<input class="form-control" id="new-todo" placeholder="add a todo">' + 
             '</div>'
             );
     }

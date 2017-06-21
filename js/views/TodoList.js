@@ -6,8 +6,9 @@ const TodoListView = Backbone.View.extend({
     },
     render: function() {
         // Render each item in collection
-        this.collection.forEach(this.renderTodo, this);
-        return this;
+        console.log(this.collection);
+        this.collection.forEach(this.renderTodo, this); // what's with the this
+        return this; // what's with the this
     },
     renderTodo: function (todoItem) {
         console.log('renderTodo is firing');
