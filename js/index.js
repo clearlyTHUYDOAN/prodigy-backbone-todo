@@ -4,7 +4,7 @@ $(document).ready(() => {
     const appView = new AppView();
     appView.render();
 
-    // Instantiate initial state of collection
+    // Instantiate collection
     const todoList = new TodoList(
         {
             title: "Learn Backbone",

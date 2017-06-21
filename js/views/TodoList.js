@@ -2,10 +2,9 @@ const TodoList = Backbone.View.extend({
     el: '#todo-list', 
     initialize: function () { 
         // Event listeners
-        
+        // console.log('Initialize has fired.')
     },
     render: function() {
-        // Render each todo item in the collection
-        
+        // Render each item in collection
     }
 })

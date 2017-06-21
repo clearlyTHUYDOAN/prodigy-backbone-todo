@@ -1,10 +1,10 @@
 const AppView = Backbone.View.extend({
     el: '#header', 
-    initialize: () => { 
+    initialize: function () { 
         // Event listeners
         console.log('Initialize has fired.')
     },
-    render: () => {
+    render: function() {
         this.$el.html('<h1>' + 'Backbone Todo App' + '</h1>');
     }
 })
