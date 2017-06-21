@@ -21,7 +21,6 @@ $(document).ready(() => {
             completed: true
         }
     ])
-    console.log(todoList);
 
     // Render initial state of todos - currently renders but not dynamic
     const todoListView = new App.Views.TodoList({collection: todoList});
@@ -29,7 +28,7 @@ $(document).ready(() => {
     // $('#todo-list').append(todoListView.render().el);
 
     // Render form to add Todos
-    const formView = new App.Views.Form();
+    const formView = new App.Views.Form({collection: todoList});
     formView.render();
 
     // Render controls to manipiulate todolist
