@@ -1,3 +1,3 @@
-let TodoList = Backbone.Collection.extend({
+const TodoList = Backbone.Collection.extend({
     model: Todo,
 })
