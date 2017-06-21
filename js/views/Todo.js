@@ -1,9 +1,14 @@
 const TodoView = Backbone.View.extend({
-    tagName: 'li',
+    el: '#todo-list',
     initialize: function() {
-        console.log('View initialize has fired.');
+        console.log('TodoView initialize has fired.');
     },
     render: function() {
-        console.log('View render has fired.');
+        this.$el.html(
+            'li class="list-group-item">' + 
+                '<input type="checkbox" value="on"></input>' +
+                '<label class="">Test</label>' +
+            '</li>'
+        );
     }
 });

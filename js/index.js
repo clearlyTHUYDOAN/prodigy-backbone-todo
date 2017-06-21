@@ -25,4 +25,8 @@ $(document).ready(() => {
     const formView = new FormView();
     formView.render();
 
+    // Render controls to manipiulate todolist
+    const controlsView = new ControlsView();
+    controlsView.render();
+
 })

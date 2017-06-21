@@ -10,6 +10,7 @@ const TodoListView = Backbone.View.extend({
         return this;
     },
     renderTodo: function (todoItem) {
+        console.log('renderTodo is firing');
         let todoView = new TodoView({model: Todo});
         todoView.render();
         this.$el.append(todoView.el);
