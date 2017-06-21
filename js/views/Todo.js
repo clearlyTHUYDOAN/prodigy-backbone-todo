@@ -1,4 +1,4 @@
-const TodoView = Backbone.View.extend({
+App.Views.Todo = Backbone.View.extend({
     el: '#todo-list',
     initialize: function() {
         // Event listeners

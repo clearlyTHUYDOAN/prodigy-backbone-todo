@@ -1,16 +1,15 @@
-const FormView = Backbone.View.extend({
+App.Views.Form = Backbone.View.extend({
     el: '#form',
     events: { // ... vs this.listenTo?
         submit: 'addTodo',
     },
     addTodo: function(e) {
-     // fires when anything in the form is clicked...only want on button. might have to refactor
         e.preventDefault();
         let input = this.$('#new-todo')[0]; // why 0
-        let newTodo = new Todo({title: input.value, completed: false});
+        let newTodo = new App.Models.Todo({title: input.value, completed: false});
         console.log(newTodo.toJSON());
         // do not have access to collection in here?
-        // console.log(todoList)
+        // console.log(App.Collections.TodoList)
         // newTodo.save();
         // TodoList.add(newTodo);
         input.value = '';

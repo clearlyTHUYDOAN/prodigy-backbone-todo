@@ -1,4 +1,4 @@
-const Todo = Backbone.Model.extend({
+App.Models.Todo = Backbone.Model.extend({
     defaults: {
         title: '',
         completed: false

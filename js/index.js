@@ -1,11 +1,18 @@
+// Global object = only workaround for having access to collection(s) inside view(s)?
+const App = {
+    Models: {},
+    Views: {},
+    Collections: {},
+}
+
 $(document).ready(() => {
 
     // Render app
-    const appView = new AppView();
+    const appView = new App.Views.Main();
     appView.render();
 
     // Instantiate collection
-    const todoList = new TodoList([
+    const todoList = new App.Collections.TodoList([
         {
             title: "Learn Backbone",
             completed: false
@@ -16,17 +23,17 @@ $(document).ready(() => {
     ])
     console.log(todoList);
 
-    // Render initial state of todos
-    const todoListView = new TodoListView({collection: todoList});
+    // Render initial state of todos - currently renders but not dynamic
+    const todoListView = new App.Views.TodoList({collection: todoList});
     todoListView.render();
     // $('#todo-list').append(todoListView.render().el);
 
     // Render form to add Todos
-    const formView = new FormView();
+    const formView = new App.Views.Form();
     formView.render();
 
     // Render controls to manipiulate todolist
-    const controlsView = new ControlsView();
+    const controlsView = new App.Views.Controls();
     controlsView.render();
 
 })

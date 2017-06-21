@@ -1,9 +1,5 @@
-const ControlsView = Backbone.View.extend({
+App.Views.Controls = Backbone.View.extend({
     el: '#controls',
-    initialize: function() {
-        // Event listeners
-
-    },
     render: function() {
         this.$el.html(
             '<div>' + 
