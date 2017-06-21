@@ -14,10 +14,12 @@ $(document).ready(() => {
             completed: true
         }
     ])
+    console.log(todoList);
 
     // Render initial state of todos
     const todoListView = new TodoListView({collection: todoList});
     todoListView.render();
+    // $('#todo-list').append(todoListView.render().el);
 
     // Render form to add Todos
     const formView = new FormView();
