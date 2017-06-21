@@ -11,6 +11,5 @@ App.Views.TodoList = Backbone.View.extend({
         console.log(todoItem) // <- where is this coming from
         let todoView = new App.Views.Todo({ model: todoItem });
         todoView.render(); 
-        this.$el.append(todoView.el);
     }
 })

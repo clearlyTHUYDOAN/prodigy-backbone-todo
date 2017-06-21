@@ -5,7 +5,7 @@ const App = {
     Collections: {},
 }
 
-$(document).ready(() => {
+$(document).ready(function() {
 
     // Render app
     const appView = new App.Views.Main();

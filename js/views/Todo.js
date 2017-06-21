@@ -8,11 +8,11 @@ App.Views.Todo = Backbone.View.extend({
         this.listenTo(this.model, 'change', this.render); // don't pass the call
     },
     toggleComplete: function() {
-        console.log('toggleComplete firing from inside view')
         this.model.toggleComplete(); // fires from inside model when user interacts with view
     },
     render: function() {
-        this.$el.html(this.template(this.model.attributes));
-        return this;
+        console.log(this.model.attributes);
+        this.$el.append(this.template(this.model.attributes));
+        return this; // what's this for
     }
 });
