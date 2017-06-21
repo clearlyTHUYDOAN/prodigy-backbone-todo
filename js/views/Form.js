@@ -5,6 +5,12 @@ const FormView = Backbone.View.extend({
 
     },
     render: function() {
-        this.$el.html('<input id="new-todo" placeholder="Get some shit done."><button id="add-todo" type="button">Add</button>');
+        this.$el.html(
+            '<div class="input-group">' + 
+                '<span class="input-group-btn">' + 
+                    '<button class="btn btn-primary" type="button">Add</button></span>' +
+                '<input class="form-control" placeholder="add a todo">' + 
+            '</div>'
+            );
     }
 })

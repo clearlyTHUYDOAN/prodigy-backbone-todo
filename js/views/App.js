@@ -5,7 +5,7 @@ const AppView = Backbone.View.extend({
 
     },
     render: function() {
-        this.$el.html('<h1>' + 'Backbone Todo App' + '</h1>');
+        this.$el.html('<h1 class="text-center">' + 'Backbone Todo App' + '</h1>');
     }
 })
 
