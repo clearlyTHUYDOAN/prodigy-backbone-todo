@@ -1,5 +1,3 @@
-// There is a 1-1 relationship between models and views.
-
 let TodoView = Backbone.View.extend({
     tagName: 'li',
     initialize: function() {
