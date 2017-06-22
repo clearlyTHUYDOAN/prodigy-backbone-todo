@@ -11,8 +11,8 @@ App.Views.Todo = Backbone.View.extend({
         this.model.toggleComplete(); // fires from inside model when user interacts with view
     },
     render: function() {
-        console.log(this.model.attributes);
-        this.$el.append(this.template(this.model.attributes));
+        console.log(this.model.attributes)
+        this.$el.append(this.template(this.model.attributes)); // when clearing, title doesn't get passed b/c this.model.attributes is undefined
         // return this; // what's this for
     }
 });

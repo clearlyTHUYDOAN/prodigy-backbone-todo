@@ -11,9 +11,9 @@ App.Views.TodoList = Backbone.View.extend({
     renderTodo: function (todoItem) {
         console.log(todoItem) // <- where is this coming from
         let todoView = new App.Views.Todo({ model: todoItem });
-        todoView.render(); 
+        todoView.render();
         // hacky
-        const controlsView = new App.Views.Controls({ model: todoItem });
+        const controlsView = new App.Views.Controls({ model: todoItem }); // here just so i can pass model to controls view
         controlsView.render();
     }
 })

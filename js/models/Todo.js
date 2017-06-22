@@ -11,5 +11,8 @@ App.Models.Todo = Backbone.Model.extend({
     clearTodos: function() {
         // where we actually deal with removing the data
         console.log('clearTodos') // fires for all models...
+        console.log(this.collection)
+        this.collection.reset(); // empties entire collection without any models as arguments
+        console.log(this.collection);
     }
 })

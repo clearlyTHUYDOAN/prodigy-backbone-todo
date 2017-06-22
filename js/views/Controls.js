@@ -5,7 +5,6 @@ App.Views.Controls = Backbone.View.extend({
         'click button': 'clearTodos'
     },
     clearTodos: function() {
-        // console.log(this.model); // have to refactor so it has access to todo model?
         this.model.clearTodos();
     },
     render: function() {
