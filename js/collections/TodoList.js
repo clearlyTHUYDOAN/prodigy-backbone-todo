@@ -1,31 +1,37 @@
+/* forEach is used in this collection because this.where throws 
+'Uncaught TypeError: this[(intermediate value)(intermediate value)(intermediate value)] is not a function'*/
+
 App.Collections.TodoList = Backbone.Collection.extend({
     model: App.Models.Todo,
     initialize: function() {
         this.filter = 'all';
     },
     clearCompleted: function() {
-        let myStuff = [];
-        this.forEach(function (o) {
-            console.log(o);
-            if (o.get('completed')) {
-                myStuff.push(o);
+        let completedTodos = [];
+        this.forEach(function(model) { 
+            if (model.get('completed')) {
+                completedTodos.push(model);
             }
         }.bind(this));
-        this.remove(myStuff);
-        // this.remove(this.findWhere({ completed: false }));
-        window.test = this;
-        // console.log(this.where({ completed: true }));
-        // let result = this.where({completed: true}); // error with attrs parameter with the function, need this
-        // console.log(result);
-        // this.remove(result); // this only removes the first result. passing an object fucks it up though without 'this'.
+        this.remove(completedTodos);
+        
     },
     filtered: function() {
         console.log('filtered is firing')
-        // if (this.filter === 'incomplete') return this.where({'completed': false}); 
-        // if (this.filter === 'incomplete') {
-
-        // }
-        // if (this.filter === 'complete') return this.where({'completed': true}); 
+        if (this.filter === 'incomplete') {
+            let incompleteTodos = [];
+            this.forEach(function(model) {
+                if(!model.get('completed')) incompleteTodos.push(model);
+            }.bind(this));
+            return incompleteTodos;
+        }
+        if (this.filter === 'complete') {
+            let completedTodos = [];
+            this.forEach(function(model) {
+                if(model.get('completed')) completedTodos.push(model);
+            }.bind(this));
+            return completedTodos;
+        }
         return this;
     },
     updateFilter: function(type) {
