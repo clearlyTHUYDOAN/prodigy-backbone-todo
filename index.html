@@ -16,9 +16,7 @@
         <div class="container" id="todoapp">
             <header id="header"></header>
             <form id="form"></form>
-            <section id="main">
-                <ul class="list-group" id="todo-list"></ul>
-            </section>
+            <ul class="list-group" id="todo-list"></ul>
             <footer id="controls"></footer>
         </div>
 
@@ -38,14 +36,12 @@
     </script>
 
     <script type="text/template" id='filter'>
-        <div> 
-            <select>
-                <option value="all">all</option>
-                <option value="active">active</option>
-                <option value="complete">complete</option>
-            </select>
-            <button class="pull-right btn btn-default" id="clear-button">Clear</button>
-        </div>
+        <select>
+            <option value="all">all</option>
+            <option value="active">active</option>
+            <option value="complete">complete</option>
+        </select>
+        <button class="pull-right btn btn-default" id="clear-button">Clear</button>
     </script>
 
     <script type="text/template" id="todo-item">
