@@ -46,8 +46,8 @@
 
     <script type="text/template" id="todo-item">
         <li class="list-group-item">
-            <input type="checkbox" value="on"></input>
-            <label class=""><%= title %></label>
+            <input type="checkbox" value="on" <%= completed ? 'checked' : '' %> ></input>
+            <label class=<%= completed ? 'done' : ''%> ><%= title %></label>
         </li>
     </script>
 
