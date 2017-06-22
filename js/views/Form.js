@@ -14,6 +14,6 @@ App.Views.Form = Backbone.View.extend({
     },
     render: function() {
         this.$el.html(this.template()); // finds template by an identifier and inserts into el
-        return this;
+        // return this;
     }
 })

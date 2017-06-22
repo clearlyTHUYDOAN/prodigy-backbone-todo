@@ -13,6 +13,6 @@ App.Views.Todo = Backbone.View.extend({
     render: function() {
         console.log(this.model.attributes);
         this.$el.append(this.template(this.model.attributes));
-        return this; // what's this for
+        // return this; // what's this for
     }
 });
