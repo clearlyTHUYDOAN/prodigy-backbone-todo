@@ -6,7 +6,7 @@ App.Views.TodoList = Backbone.View.extend({
     },
     render: function() {
         this.$el.html(''); // clears node first to prevent weird appends
-        this.collection.filtered().forEach(this.renderTodo, this); // 'this' here is the model because each thing in the collection is the model and we're passing it with this.renderTodo
+        this.collection.filtered().forEach(this.renderTodo, this); // we're passing each model with this.renderTodo
         return this;
     },
     renderTodo: function (todoItem) {
