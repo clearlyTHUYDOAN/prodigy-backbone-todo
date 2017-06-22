@@ -2,7 +2,7 @@ App.Views.TodoList = Backbone.View.extend({
     el: '#todo-list', 
     initialize: function() {
         this.listenTo(this.collection, 'add', this.renderTodo); // don't pass the call
-        this.listenTo(this.collection, 'reset', this.renderTodo); // for clearing todos
+        this.listenTo(this.collection, 'reset', this.renderTodo); // for clearing todos - maybe use separate function?
     },
     render: function() {
         this.collection.forEach(this.renderTodo, this); // what's with the this?
