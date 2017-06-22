@@ -12,14 +12,14 @@ $(document).ready(function() {
     appView.render();
 
     // Instantiate collection
-    const todoList = new App.Collections.TodoList([ // possibly make a global object to do clear and filter
+    const todoList = new App.Collections.TodoList([ 
         {title: "Learn Backbone", completed: false}, 
         {title: "Eat Lunch", completed: true},
         {title: "Bug Danny", completed: true},
         {title: "Go-Karting w/ Prodigy", completed: false}
     ])
 
-    // Render initial state of todos - currently renders but not dynamic
+    // Render initial state of todos 
     const todoListView = new App.Views.TodoList({collection: todoList});
     todoListView.render();
 
