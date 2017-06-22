@@ -5,7 +5,7 @@ App.Views.Controls = Backbone.View.extend({
         'click button': 'clearTodos',
         'change select': 'test',
     },
-    // ALL EVENTS FIRE TWICE?
+    // ALL EVENTS FIRE SAME # OF TIMES AS THERE ARE MODELS because of reusing renderTodo
     clearTodos: function() {
         // this.model.clearTodos();
     },
