@@ -10,7 +10,7 @@ App.Views.Controls = Backbone.View.extend({
     },
     selectFilter: function(e) {
         console.log(e.target.value);
-        // this.collection.updateFilter(e.target.value);
+        this.collection.updateFilter(e.target.value);
     },
     render: function() {
         this.$el.html(this.template());
