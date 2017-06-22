@@ -1,5 +1,5 @@
 App.Views.Controls = Backbone.View.extend({
-    el: '#controls', // okay since we're not nesting
+    el: '#controls',
     template: _.template($('#filter').html()),
     events: {
         'click button': 'clearTodos',
