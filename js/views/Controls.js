@@ -6,10 +6,11 @@ App.Views.Controls = Backbone.View.extend({
         'change select': 'selectFilter',
     },
     clearTodos: function() {
-        this.collection.clearCompleted();
+        // this.collection.clearCompleted();
     },
     selectFilter: function(e) {
-        this.collection.updateFilter(e.target.value);
+        console.log(e.target.value);
+        // this.collection.updateFilter(e.target.value);
     },
     render: function() {
         this.$el.html(this.template());
