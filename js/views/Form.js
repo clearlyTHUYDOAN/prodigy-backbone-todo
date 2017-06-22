@@ -13,7 +13,7 @@ App.Views.Form = Backbone.View.extend({
         input.value = '';
     },
     render: function() {
-        this.$el.html(this.template()); // finds template by an identifier and inserts into el
+        this.$el.html(this.template());
         // return this;
     }
 })
