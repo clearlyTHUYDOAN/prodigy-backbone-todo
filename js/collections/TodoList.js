@@ -17,7 +17,6 @@ App.Collections.TodoList = Backbone.Collection.extend({
         
     },
     filtered: function() {
-        console.log('filtered is firing')
         if (this.filter === 'incomplete') {
             let incompleteTodos = [];
             this.forEach(function(model) {
