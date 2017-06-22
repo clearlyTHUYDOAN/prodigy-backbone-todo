@@ -2,18 +2,16 @@ App.Views.TodoList = Backbone.View.extend({
     el: '#todo-list', 
     initialize: function() {
         this.listenTo(this.collection, 'add', this.renderTodo);
-        this.listenTo(this.collection, 'reset', this.renderTodo); // for clearing todos - maybe use separate function?
+        this.listenTo(this.collection, 'update', this.render);
+        this.listenTo(this.collection, 'updateFilter', this.render);
     },
     render: function() {
-        this.collection.forEach(this.renderTodo, this);
-        // return this;
+        this.$el.html(''); // clears node first to prevent weird appends
+        this.collection.filtered().forEach(this.renderTodo, this); // this here is the model because each thing in the collection is the model and we're passing it with this.renderTodo
+        return this;
     },
     renderTodo: function (todoItem) {
-        console.log(todoItem) // <- where is this coming from
         let todoView = new App.Views.Todo({ model: todoItem });
-        todoView.render();
-        // hacky
-        const controlsView = new App.Views.Controls({ model: todoItem }); // here just so i can pass model to controls view
-        controlsView.render();
+        this.$el.append(todoView.render().el); // <- you can do .el at the end because you're returning this in the render. .el is now the rendered content that comes out of the render function (string representation)
     }
 })

@@ -8,12 +8,11 @@ App.Views.Form = Backbone.View.extend({
         e.preventDefault();
         const input = this.$('#new-todo')[0]; // why retrieve this way
         const newTodo = new App.Models.Todo({ title: input.value, completed: false });
-        // newTodo.save();
         this.collection.add(newTodo);
         input.value = '';
     },
     render: function() {
         this.$el.html(this.template());
-        // return this;
+        return this;
     }
 })

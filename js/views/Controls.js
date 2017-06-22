@@ -1,18 +1,18 @@
 App.Views.Controls = Backbone.View.extend({
-    el: '#controls',
+    el: '#controls', // okay since we're not nesting
     template: _.template($('#filter').html()),
     events: {
         'click button': 'clearTodos',
         'change select': 'selectFilter',
     },
-    // ALL EVENTS FIRE SAME # OF TIMES AS THERE ARE MODELS because of reusing renderTodo
     clearTodos: function() {
-        // this.model.clearTodos();
+        this.collection.clearCompleted();
     },
     selectFilter: function(e) {
-        console.log(e.target.value);
+        this.collection.updateFilter(e.target.value);
     },
     render: function() {
         this.$el.html(this.template());
+        return this;
     }
 })

@@ -3,14 +3,7 @@ App.Models.Todo = Backbone.Model.extend({
         title: '',
         completed: false
     },
-    toggleComplete: function() { // how does it know which instance we're clicking on?
-        console.log(this.get('title')) // fires for all models...
-        // this.set({ 'completed': !this.get('completed') });
-        // this.save();
-    },
-    clearTodos: function() {
-        console.log(this.collection)
-        this.collection.reset();
-        console.log(this.collection);
+    toggleComplete: function() {
+        this.set('completed', !this.get('completed')); // if you're doing one key, you don't have to pass an object.
     }
 })
