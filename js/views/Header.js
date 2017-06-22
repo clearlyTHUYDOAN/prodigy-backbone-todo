@@ -1,4 +1,4 @@
-App.Views.Main = Backbone.View.extend({
+App.Views.Header = Backbone.View.extend({
     el: '#header', 
     template: _.template($('#app').html()),
     render: function() {

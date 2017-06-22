@@ -8,7 +8,7 @@ const App = {
 $(document).ready(function() {
 
     // Render app
-    const appView = new App.Views.Main();
+    const appView = new App.Views.Header();
     appView.render();
 
     // Instantiate collection
