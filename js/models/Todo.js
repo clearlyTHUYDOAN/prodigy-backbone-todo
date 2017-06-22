@@ -9,7 +9,6 @@ App.Models.Todo = Backbone.Model.extend({
         // this.save();
     },
     clearTodos: function() {
-        console.log('clearTodos') // fires for all models...
         console.log(this.collection)
         this.collection.reset();
         console.log(this.collection);
