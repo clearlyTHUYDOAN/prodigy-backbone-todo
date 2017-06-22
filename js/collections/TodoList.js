@@ -4,11 +4,8 @@ App.Collections.TodoList = Backbone.Collection.extend({
         this.filter = 'all';
     },
     clearCompleted: function() {
-        console.log(this);
         let result = this.where('completed', true); // supposed to return an array of models but currently returning one model. passing an object fucks it up
-        console.log(result);
         this.remove(result);
-        // console.log(this)
     },
     filtered: function() {
         console.log('filtered is firing')

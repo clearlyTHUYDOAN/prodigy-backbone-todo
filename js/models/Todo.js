@@ -3,7 +3,7 @@ App.Models.Todo = Backbone.Model.extend({
         title: '',
         completed: false
     },
-    toggleComplete: function() { // fires add, remove, and change
+    toggleComplete: function() { // fires add, remove, and change on the model
         this.set('completed', !this.get('completed')); // if you're doing one key, you don't have to pass an object.
     }
 })

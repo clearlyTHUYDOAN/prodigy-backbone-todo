@@ -3,7 +3,7 @@ App.Views.TodoList = Backbone.View.extend({
     initialize: function() {
         this.listenTo(this.collection, 'add', this.renderTodo);
         this.listenTo(this.collection, 'remove', this.render); // update fired also on add so we were getting more renders than needed
-        // this.listenTo(this.collection, 'updateFilter', this.render);
+        this.listenTo(this.collection, 'updateFilter', this.render);
     },
     render: function() { // doesn't fire on add to collection, fires when you remove and when initialized
         console.log('todo list rendering');
