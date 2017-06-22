@@ -14,5 +14,3 @@ App.Views.TodoList = Backbone.View.extend({
         this.$el.append(todoView.render().el); // <- you can do .el at the end because you're returning this in the render. .el is now the rendered content that comes out of the render function (string representation)
     }
 })
-
-// always return this in renders for views
