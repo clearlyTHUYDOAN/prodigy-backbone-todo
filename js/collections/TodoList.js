@@ -1,6 +1,3 @@
-/* forEach is used in this collection because this.where throws 
-'Uncaught TypeError: this[(intermediate value)(intermediate value)(intermediate value)] is not a function'*/
-
 App.Collections.TodoList = Backbone.Collection.extend({
     model: App.Models.Todo,
     initialize: function() {
