@@ -4,37 +4,20 @@
 App.Collections.TodoList = Backbone.Collection.extend({
     model: App.Models.Todo,
     initialize: function() {
-        this.filter = 'all';
+        this.filterBy = 'all';
     },
     clearCompleted: function() {
-        let completedTodos = [];
-        this.forEach(function(model) { 
-            if (model.get('completed')) {
-                completedTodos.push(model);
-            }
-        }.bind(this));
+        let completedTodos = this.where({completed: true})
         this.remove(completedTodos);
         
     },
     filtered: function() {
-        if (this.filter === 'incomplete') {
-            let incompleteTodos = [];
-            this.forEach(function(model) {
-                if(!model.get('completed')) incompleteTodos.push(model);
-            }.bind(this));
-            return incompleteTodos;
-        }
-        if (this.filter === 'complete') {
-            let completedTodos = [];
-            this.forEach(function(model) {
-                if(model.get('completed')) completedTodos.push(model);
-            }.bind(this));
-            return completedTodos;
-        }
+        if (this.filterBy === 'incomplete') return this.where({completed: false});
+        if (this.filterBy === 'complete') return this.where({completed: true});
         return this;
     },
     updateFilter: function(type) {
-        this.filter = type;
+        this.filterBy = type;
         this.trigger('updateFilter');
     }
 })
